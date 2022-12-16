@@ -1,4 +1,6 @@
-﻿namespace medcard
+﻿using medcard.ViewModel;
+
+namespace medcard
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -8,6 +10,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

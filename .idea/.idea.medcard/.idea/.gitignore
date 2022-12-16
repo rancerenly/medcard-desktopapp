@@ -3,8 +3,8 @@
 /workspace.xml
 # Rider ignored files
 /projectSettingsUpdater.xml
-/contentModel.xml
 /modules.xml
+/contentModel.xml
 /.idea.medcard.iml
 # Editor-based HTTP Client requests
 /httpRequests/
