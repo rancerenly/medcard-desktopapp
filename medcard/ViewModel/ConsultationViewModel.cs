@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using medcard.Model;
 using System.Runtime.CompilerServices;
+using medcard.Tool;
 
 namespace medcard.ViewModel
 {
@@ -29,7 +30,25 @@ namespace medcard.ViewModel
                     Recommendation = "1"
                 }
             };
-        
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ??
+                       (addCommand = new RelayCommand(obj =>
+                       {
+                           addConsultation();
+                       }));
+            }
+        }
+
+        private void addConsultation()
+        {
+            Consultation consult = selectedConsultation;
+            Consultations.Add(consult);
+            SelectedConsultation = consult;
+        }
         private Consultation selectedConsultation = new Consultation();
         public Consultation SelectedConsultation
         {

@@ -16,3 +16,4 @@ C:\Users\rance\RiderProjects\medcard\medcard\obj\Debug\medcard.exe
 C:\Users\rance\RiderProjects\medcard\medcard\obj\Debug\medcard.pdb
 C:\Users\rance\RiderProjects\medcard\medcard\obj\Debug\View\ConsultView.g.cs
 C:\Users\rance\RiderProjects\medcard\medcard\obj\Debug\View\ConsultView.baml
+C:\Users\rance\RiderProjects\medcard\medcard\obj\Debug\GeneratedInternalTypeHelper.g.cs

@@ -53,6 +53,7 @@
         </ApplicationDefinition>
         <Compile Include="Model\Consultation.cs" />
         <Compile Include="Properties\Annotations.cs" />
+        <Compile Include="Tool\RelayCommand.cs" />
         <Compile Include="ViewModel\ConsultationViewModel.cs" />
         <Compile Include="View\ConsultView.xaml.cs">
           <DependentUpon>ConsultView.xaml</DependentUpon>
