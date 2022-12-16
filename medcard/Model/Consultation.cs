@@ -7,6 +7,20 @@ namespace medcard.Model
 {
     public class Consultation : INotifyPropertyChanged
     {
+        
+        public Consultation()
+        {
+        }
+
+        public Consultation(Consultation other)
+        {
+            PatientName = other.PatientName;
+            DoctorName = other.DoctorName;
+            Department = other.Department;
+            Diagnosis = other.Diagnosis;
+            DateConclusion = other.DateConclusion;
+            Recommendation = other.Recommendation;
+        }
         private string patientName;
         public string PatientName
         {
@@ -62,7 +76,7 @@ namespace medcard.Model
             }
         }
 
-        public DateTime DateConclusion { get; set; } = DateTime.Today;
+        public DateTime DateConclusion { get; set; } = DateTime.Now;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
