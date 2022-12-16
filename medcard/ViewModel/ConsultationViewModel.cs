@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Emit;
 using medcard.Model;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -13,6 +14,10 @@ namespace medcard.ViewModel
 {
     public class ConsultationViewModel : INotifyPropertyChanged
     {
+        public ConsultationViewModel()
+        {
+            SelectedConsultation = new Consultation();
+        }
         public ObservableCollection<Consultation> Consultations { get; set; } =
             new ObservableCollection<Consultation>
             {
@@ -48,14 +53,14 @@ namespace medcard.ViewModel
 
         private void addConsultation()
         {
-            if (selectedConsultation == null)
+            if (SelectedConsultation == null)
             {
-                selectedConsultation = new Consultation();
+                SelectedConsultation = new Consultation();
             }
-            
-            Consultation consult = selectedConsultation;
+            Consultation consult = new Consultation(SelectedConsultation);
             Consultations.Add(consult);
             SelectedConsultation = consult;
+
         }
         private RelayCommand deleteCommand;
         public RelayCommand DeleteCommand
