@@ -7,8 +7,7 @@ namespace medcard.Model
 {
     public class Consultation : INotifyPropertyChanged
     {
-        private string patientName = string.Empty;
-
+        private string patientName;
         public string PatientName
         {
             get { return patientName; }
@@ -18,7 +17,8 @@ namespace medcard.Model
                 OnPropertyChanged("PatientName");
             }
         }
-        private string doctorName = string.Empty;
+
+        private string doctorName;
         public string DoctorName
         {
             get { return doctorName; }
@@ -28,8 +28,8 @@ namespace medcard.Model
                 OnPropertyChanged("DoctorName");
             }
         }
-        
-        private string recommendation = string.Empty;
+
+        private string recommendation;
         public string Recommendation
         {
             get { return recommendation; }
@@ -39,7 +39,8 @@ namespace medcard.Model
                 OnPropertyChanged("Recommendation");
             }
         }
-        private string diagnosis = string.Empty;
+
+        private string diagnosis;
         public string Diagnosis
         {
             get { return diagnosis; }
@@ -49,7 +50,8 @@ namespace medcard.Model
                 OnPropertyChanged("Diagnosis");
             }
         }
-        private string department = string.Empty;
+
+        private string department;
         public string Department
         {
             get { return department; }
