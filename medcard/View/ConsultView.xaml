@@ -4,8 +4,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:medcard.View"
+        xmlns:viewModel="clr-namespace:medcard.ViewModel"
         mc:Ignorable="d"
         Title="Consultations" Height="450" Width="900">
+    <Window.DataContext>
+        <viewModel:ConsultationViewModel x:Name="ConsultationViewModel"/>
+    </Window.DataContext>
     <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -38,8 +42,8 @@
             <TextBox Text="{Binding Diagnosis, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="30" Margin="5"></TextBox>
             <TextBox Text="{Binding Recommendation, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="30" Margin="5"></TextBox>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Orientation="Vertical" Grid.RowSpan="2">
-            <Button Width="100" Height="30" MinWidth="30" Content="Save" Background="LightGreen" Margin="5"/>
+        <StackPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Orientation="Vertical" Grid.RowSpan="1">
+            <Button Command="{Binding AddCommand}" Width="100" Height="30" MinWidth="30" Content="Save" Background="LightGreen" Margin="5"/>
             <Button Width="100" Height="30" MinWidth="30" Content="Edit" Background="LightYellow" Margin="5"/>
             <Button Width="100" Height="30" MinWidth="30" Content="Delete" Background="LightCoral" Margin="5"/>
         </StackPanel>
