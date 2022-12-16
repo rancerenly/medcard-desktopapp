@@ -50,6 +50,9 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="View\Consultations.xaml.cs">
+          <DependentUpon>Consultations.xaml</DependentUpon>
+        </Compile>
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -62,6 +65,7 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="View\Consultations.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Model\Consultation.cs" />
@@ -82,7 +86,6 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="View" />
       <Folder Include="ViewModel" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
