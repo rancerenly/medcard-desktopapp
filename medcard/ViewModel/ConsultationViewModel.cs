@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using medcard.Model;
 using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Media.Effects;
 using medcard.Tool;
 
 namespace medcard.ViewModel
@@ -45,11 +48,49 @@ namespace medcard.ViewModel
 
         private void addConsultation()
         {
+            if (selectedConsultation == null)
+            {
+                selectedConsultation = new Consultation();
+            }
+            
             Consultation consult = selectedConsultation;
             Consultations.Add(consult);
             SelectedConsultation = consult;
         }
-        private Consultation selectedConsultation = new Consultation();
+        private RelayCommand deleteCommand;
+        public RelayCommand DeleteCommand
+        {
+            get
+            {
+                return deleteCommand ??
+                       (deleteCommand = new RelayCommand(obj =>
+                       {
+                           deleteConsultation();
+                       }));
+            }
+        }
+        private void deleteConsultation()
+        {
+            if (selectedConsultation != null)
+            {
+                var consult = Consultations.FirstOrDefault(cons =>
+                    cons.PatientName == selectedConsultation.PatientName &&
+                    cons.DoctorName == selectedConsultation.DoctorName &&
+                    cons.Diagnosis == selectedConsultation.Diagnosis);
+                Consultations.Remove(consult);
+            }
+            else
+            {
+                errorWindow();
+            }
+        }
+
+        private void errorWindow()
+        {
+            MessageBox.Show("Выберите консультацию!");
+        }
+
+        private Consultation selectedConsultation;
         public Consultation SelectedConsultation
         {
             get { return selectedConsultation; }

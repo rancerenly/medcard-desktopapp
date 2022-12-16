@@ -8,8 +8,6 @@ namespace medcard.View
         public ConsultView()
         {
             InitializeComponent();
-
-            DataContext = new ConsultationViewModel();
         }
     }
 }
