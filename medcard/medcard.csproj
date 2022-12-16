@@ -4,11 +4,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{9E968111-3436-40BB-A42F-426F2AA5FFAA}</ProjectGuid>
+        <ProjectGuid>{F99F0319-B883-41B5-893C-DDBC42F920B2}</ProjectGuid>
         <OutputType>WinExe</OutputType>
         <RootNamespace>medcard</RootNamespace>
         <AssemblyName>medcard</AssemblyName>
-        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <LangVersion>9.0</LangVersion>
         <FileAlignment>512</FileAlignment>
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <WarningLevel>4</WarningLevel>
@@ -50,8 +51,11 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="View\Consultations.xaml.cs">
-          <DependentUpon>Consultations.xaml</DependentUpon>
+        <Compile Include="Model\Consultation.cs" />
+        <Compile Include="Properties\Annotations.cs" />
+        <Compile Include="ViewModel\ConsultationViewModel.cs" />
+        <Compile Include="View\ConsultView.xaml.cs">
+          <DependentUpon>ConsultView.xaml</DependentUpon>
         </Compile>
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
@@ -65,10 +69,9 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Page Include="View\Consultations.xaml" />
+        <Page Include="View\ConsultView.xaml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Model\Consultation.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>
@@ -84,9 +87,6 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="ViewModel" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
